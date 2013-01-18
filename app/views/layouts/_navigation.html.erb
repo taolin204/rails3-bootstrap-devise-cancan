@@ -1,6 +1,11 @@
-<%= link_to "Any Agent: The Integrated Solutions for all your business", root_path, :class => 'brand' %>
 <% if user_signed_in? %>
-<ul class="nav">
+<%= link_to "Any Agent:", root_path, :class => 'brand' %>
+<% else %>
+<%= link_to "Any Agent: The Integrated Solutions for all your business", root_path, :class => 'brand' %>
+<% end %>
+
+<ul class="nav pull-right">
+  <% if user_signed_in? %>
   <li class="active"><a href="#">Home</a></li>
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
@@ -15,10 +20,6 @@
   </li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
-</ul>
-<% end %>
-
-<ul class="nav pull-right">
 
   <!--
   <% if user_signed_in? %>
@@ -36,6 +37,7 @@
     </li>
   <% end %>
   -->
+  <% end %>
 
   <% if user_signed_in? %>
     <li>

@@ -3,8 +3,11 @@ class HomeController < ApplicationController
     @users = User.all
   end
 
-  def users
+  def agents
     @users = User.all
   end
 
+	def users
+    @users = User.all
+  end
 end
