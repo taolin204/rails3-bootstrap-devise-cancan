@@ -1,4 +1,56 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<!--
+<div class="container">
+  <div class="content">
+   <div class="row">
+    <div class="span12">
+      <%= render 'layouts/messages' %>
+      <h3>Home</h3>
+      <% @users.each do |user| %>
+      <p>User: <%=link_to user.name, user %></p>
+      <% end %>
+    </div>
+  </div>
+  <footer>
+  </footer>
+  </div>
+</div> 
+-->
+<!--! end of .container -->
+<div class="container">
+
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="hero-unit">
+    <h1>Hello, my Agent!</h1>
+    <p>Description here.</p>
+    <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+  </div>
+
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="span4">
+      <h2>Interviewee</h2>
+      <h4>Management</h4> 
+      <p>Description here </p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+    <div class="span4">
+      <h2>Agent</h2>
+      <h4>Management</h4> 
+      <p>Description here. </p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+   </div>
+    <div class="span4">
+      <h2>Customer Relationship</h2>
+      <h4>Management</h4> 
+      <p>Description here.</p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; Company 2012</p>
+  </footer>
+
+</div> <!-- /container -->
