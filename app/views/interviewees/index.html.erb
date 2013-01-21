@@ -1,3 +1,166 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <%= render 'layouts/sidebar' %>
+
+    <div class='span9'>
+    <div class='row-fluid'>
+    <div class='content' data-pjax-container>
+    <script>
+      //<![CDATA[
+        $('.nav.nav-list li.active').removeClass('active');
+        $('.nav.nav-list li[data-model="users"]').addClass('active');
+      //]]>
+    </script>
+
+    <div class='page-header'>
+    <h3>List of Interviewees</h3>
+    </div>
+    <ul class="breadcrumb">
+        <li class=""><a href="/" class="pjax">Dashboard</a></li>
+        <span class="divider">/</span>
+        <li class="active"><a href="/users" class="pjax">Interviewee Management</a></li>
+    </ul>
+    <ul class='nav nav-tabs'>
+
+      <li title="" rel="" class="icon index_collection_link active">
+        <a class="pjax" href="/admin/division">
+          <i class="icon-th-list"></i>
+          <span>List</span>
+        </a>
+      </li>
+    
+      <li title="" rel="" class="icon new_collection_link ">
+        <a class="pjax" href="/admin/division/new">
+          <i class="icon-plus"></i>
+          <span>Add new</span>
+        </a>
+      </li>
+    
+      <li title="" rel="" class="icon export_collection_link ">
+        <a class="pjax" href="/admin/division/export">
+          <i class="icon-share"></i>
+          <span>Export</span>
+        </a>
+      </li>
+    
+      <li title="" rel="" class="icon history_index_collection_link ">
+        <a class="pjax" href="/admin/division/history">
+          <i class="icon-book"></i>
+          <span>History</span>
+        </a>
+      </li>
+      
+      <li class="dropdown" style="float:right">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Selected items<b class="caret"></b></a>
+          <ul class="dropdown-menu" style="left:auto; right:0;">
+              <li>
+                  <a href="#" onclick="jQuery('#bulk_action').val('export'); jQuery('#bulk_form').submit(); return false;">
+                    Export selected Interviewees
+                  </a>
+              </li>
+              <li>
+                  <a href="#" onclick="jQuery('#bulk_action').val('bulk_delete'); jQuery('#bulk_form').submit(); return false;">
+                    Delete selected Interviewees
+                  </a>
+              </li>
+          </ul>
+      </li>
+    </ul>
+
+    <div id='list'>
+      <style></style>
+      <form accept-charset="UTF-8" action="/admin/division" class="pjax-form form-inline" method="get">
+        <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <div class='well'>
+        <span id='filters_box'></span>
+        <hr class='filters_box' style='display:none'>
+        <input class='input-small' name='query' placeholder='Filter' type='search'>
+          <button class='btn btn-primary' data-disable-with="<i class='icon-white icon-refresh'></i> Refresh" type='submit'>
+          <i class='icon-white icon-refresh'></i>
+            Refresh
+          </button>
+        <span style='float:right'><a href="/admin/division/export" class="btn btn-info">Export found Divisions</a></span>
+        </div>
+      </form>
+
+      <form accept-charset="UTF-8" action="/admin/division/bulk_action" class="form" id="bulk_form" method="post">
+        <div style="margin:0;padding:0;display:inline">
+          <input name="utf8" type="hidden" value="&#x2713;" />
+          <input name="authenticity_token" type="hidden" value="Uw/LvojZYAiuBdJbi3r4NHg+pESESrqhvCHKrRbajn0=" /></div>
+          <input id="bulk_action" name="bulk_action" type="hidden" />
+          <table class='table table-condensed table-striped'>
+            <thead>
+              <tr>
+                <th class='shrink'>
+                <input class='toggle' type='checkbox'>
+                </th>
+                <th class='header pjax headerSortDown custom_id_field integer_type' data-href='/admin/division?sort=custom_id&amp;sort_reverse=true'>Custom</th>
+                <th class='header pjax  created_at_field datetime_type' data-href='/admin/division?sort=created_at'>Created at</th>
+                <th class='header pjax  updated_at_field datetime_type' data-href='/admin/division?sort=updated_at'>Updated at</th>
+                <th class='header pjax  league_field belongs_to_association_type' data-href='/admin/division?sort=league'>League</th>
+                <th class='header pjax  name_field string_type' data-href='/admin/division?sort=name'>Name</th>
+                <th class='  teams_field has_many_association_type'>Teams</th>
+                <th class='last shrink'></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                <input id="bulk_ids_" name="bulk_ids[]" type="checkbox" value="116" />
+                </td>
+                <td class='custom_id_field integer_type' title='116'>116</td>
+                <td class='created_at_field datetime_type' title='January 13, 2013 22:12'>January 13, 2013 22:12</td>
+                <td class='updated_at_field datetime_type' title='January 16, 2013 17:55'>January 16, 2013 17:55</td>
+                <td class='league_field belongs_to_association_type' title=''></td>
+                <td class='name_field string_type' title='kkkkkkkk'>kkkkkkkk</td>
+                <td class='teams_field has_many_association_type' title='test55 and asdfdsaf'><a href="/admin/team/89" class="pjax">test55</a> and <a href="/admin/team/93" class="pjax">asdfdsaf</a></td>
+                <td class='last links'>
+                <ul class='inline'>
+                          <li title="Show" rel="tooltip" class="icon show_member_link ">
+                            <a class="pjax" href="/admin/division/116">
+                              <i class="icon-info-sign"></i>
+                              <span style='display:none'>Show</span>
+                            </a>
+                          </li>
+                        
+                          <li title="Edit" rel="tooltip" class="icon edit_member_link ">
+                            <a class="pjax" href="/admin/division/116/edit">
+                              <i class="icon-pencil"></i>
+                              <span style='display:none'>Edit</span>
+                            </a>
+                          </li>
+                        
+                          <li title="Delete" rel="tooltip" class="icon delete_member_link ">
+                            <a class="pjax" href="/admin/division/116/delete">
+                              <i class="icon-remove"></i>
+                              <span style='display:none'>Delete</span>
+                            </a>
+                          </li>
+                        
+                          <li title="History" rel="tooltip" class="icon history_show_member_link ">
+                            <a class="pjax" href="/admin/division/116/history">
+                              <i class="icon-book"></i>
+                              <span style='display:none'>History</span>
+                            </a>
+                          </li>
+                        </ul>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        <div class='clearfix total-count'>4 divisions</div>
+        </form>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
 <h1>Listing interviewees</h1>
 
 <table>
@@ -29,3 +192,4 @@
 <br />
 
 <%= link_to 'New Interviewee', new_interviewee_path %>
+-->
