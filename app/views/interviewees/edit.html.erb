@@ -1,6 +1,21 @@
-<h1>Editing interviewee</h1>
 
-<%= render 'form' %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <%= render 'layouts/sidebar' %>
 
-<%= link_to 'Show', @interviewee %> |
-<%= link_to 'Back', interviewees_path %>
+    <div class='span9'>
+    <div class='row-fluid'>
+    <div class='content' data-pjax-container>
+
+    <%= render 'form_navigation' %>
+    
+    <div class='fieldset'>
+      <h4>Basic info</h4>
+      <%= render 'form' %>
+    </div>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</div>

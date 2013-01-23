@@ -1,13 +1,19 @@
 <%= simple_form_for(@interviewee) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :nationality %>
-    <%= f.input :address %>
-    <%= f.input :postal_code %>
-  </div>
+  <table class="table">
+    <tr>
+        <td><%= f.input :first_name %></td>
+        <td> <%= f.input :last_name %></td>
+    </tr>
+   <tr>
+        <td><%= f.input :nationality %></td>
+    </tr>
+    <tr>
+        <td><%= f.input :address %></td>
+        <td> <%= f.input :postal_code %></td>
+    </tr>
+  </table>
 
   <div class="form-actions">
     <%= f.button :submit %>

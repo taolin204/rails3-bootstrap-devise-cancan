@@ -1,0 +1,36 @@
+<div class='page-header'>
+  <h3>Detail Infos for Interviewee</h3>
+</div>
+<ul class="breadcrumb">
+  <li class=""><a href="/" class="pjax">Dashboard</a></li>
+  <span class="divider">/</span>
+  <li class="active"><a href="/users" class="pjax">Interviewee Management</a></li>
+  <span class="divider">/</span>
+  <li class="active"><a href="/users" class="pjax"><%= @interviewee.first_name %>, <%= @interviewee.last_name %></a></li>
+</ul>
+<ul class='nav nav-tabs'>
+  <li title="" rel="" class="icon show_member_link active">
+    <a class="pjax" href="/interviewees/<%= @interviewee.id %>">
+      <i class="icon-info-sign"></i>
+      <span>Show</span>
+    </a>
+  </li>
+  <li title="" rel="" class="icon edit_member_link ">
+    <a class="pjax" href="/interviewees/<%= @interviewee.id %>/edit">
+      <i class="icon-pencil"></i>
+      <span>Edit</span>
+    </a>
+  </li>
+  <li title="" rel="" class="icon delete_member_link ">
+    <a class="pjax" href="/interviewees/<%= @interviewee.id %>/delete">
+      <i class="icon-remove"></i>
+      <span>Delete</span>
+    </a>
+  </li>
+  <li title="" rel="" class="icon history_show_member_link ">
+    <a class="pjax" href="/interviewees/<%= @interviewee.id %>/history">
+      <i class="icon-book"></i>
+      <span>History</span>
+    </a>
+  </li>
+</ul>

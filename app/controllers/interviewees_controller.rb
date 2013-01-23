@@ -69,6 +69,18 @@ class IntervieweesController < ApplicationController
     end
   end
 
+  # GET /interviewees/1
+  # GET /interviewees/1.json
+  def delete
+    @interviewee = Interviewee.find(params[:id])
+
+    respond_to do |format|
+      format.html # delete.html.erb
+      format.json { render json: @interviewee }
+    end
+  end
+
+
   # DELETE /interviewees/1
   # DELETE /interviewees/1.json
   def destroy
