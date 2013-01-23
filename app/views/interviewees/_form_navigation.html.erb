@@ -4,24 +4,42 @@
 <ul class="breadcrumb">
   <li class=""><a href="/" class="pjax">Dashboard</a></li>
   <span class="divider">/</span>
-  <li class="active"><a href="/users" class="pjax">Interviewee Management</a></li>
+  <li class="active"><a href="/interviewees" class="pjax">Interviewee Management</a></li>
   <span class="divider">/</span>
-  <li class="active"><a href="/users" class="pjax"><%= @interviewee.first_name %>, <%= @interviewee.last_name %></a></li>
+  <% if @nav_active == 'new' %>
+  <li class="active"><a href="/interviewees/new" class="pjax">New</a></li>
+  <% else %>
+  <li class="active"><a href="/interviewees/<%= @interviewee.id %>" class="pjax"><%= @interviewee.first_name %>, <%= @interviewee.last_name %></a></li>
+  <% end %>
 </ul>
+
+<% if @nav_active != 'new' %>
 <ul class='nav nav-tabs'>
+  <% if @nav_active == 'show' %>
   <li title="" rel="" class="icon show_member_link active">
+  <% else %>
+  <li title="" rel="" class="icon show_member_link">
+  <% end %>
     <a class="pjax" href="/interviewees/<%= @interviewee.id %>">
       <i class="icon-info-sign"></i>
       <span>Show</span>
     </a>
   </li>
-  <li title="" rel="" class="icon edit_member_link ">
+  <% if @nav_active == 'edit' %>
+  <li title="" rel="" class="icon edit_member_link active">
+  <% else %>
+  <li title="" rel="" class="icon edit_member_link "> 
+  <% end %>
     <a class="pjax" href="/interviewees/<%= @interviewee.id %>/edit">
       <i class="icon-pencil"></i>
       <span>Edit</span>
     </a>
   </li>
+  <% if @nav_active == 'delete' %>
+  <li title="" rel="" class="icon delete_member_link active">
+  <% else %>
   <li title="" rel="" class="icon delete_member_link ">
+  <% end %>
     <a class="pjax" href="/interviewees/<%= @interviewee.id %>/delete">
       <i class="icon-remove"></i>
       <span>Delete</span>
@@ -34,3 +52,5 @@
     </a>
   </li>
 </ul>
+<% end %>
+  

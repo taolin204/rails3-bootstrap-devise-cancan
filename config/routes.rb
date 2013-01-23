@@ -1,6 +1,11 @@
 AnyAgent::Application.routes.draw do
   resources :interviewees
 
+  resources :interviewees do 
+    member do
+	  get 'delete'
+	end
+  end
 
   authenticated :user do
   		root :to => 'home#users'

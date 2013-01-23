@@ -3,7 +3,7 @@ class IntervieweesController < ApplicationController
   # GET /interviewees.json
   def index
     @interviewees = Interviewee.all
-
+    @nav_active = 'index'
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @interviewees }
@@ -14,7 +14,7 @@ class IntervieweesController < ApplicationController
   # GET /interviewees/1.json
   def show
     @interviewee = Interviewee.find(params[:id])
-
+    @nav_active = 'show'
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @interviewee }
@@ -25,7 +25,7 @@ class IntervieweesController < ApplicationController
   # GET /interviewees/new.json
   def new
     @interviewee = Interviewee.new
-
+    @nav_active = 'new'
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @interviewee }
@@ -35,13 +35,14 @@ class IntervieweesController < ApplicationController
   # GET /interviewees/1/edit
   def edit
     @interviewee = Interviewee.find(params[:id])
+    @nav_active = 'edit'
   end
 
   # POST /interviewees
   # POST /interviewees.json
   def create
     @interviewee = Interviewee.new(params[:interviewee])
-
+    @nav_active = 'new'
     respond_to do |format|
       if @interviewee.save
         format.html { redirect_to @interviewee, notice: 'Interviewee was successfully created.' }
@@ -57,7 +58,7 @@ class IntervieweesController < ApplicationController
   # PUT /interviewees/1.json
   def update
     @interviewee = Interviewee.find(params[:id])
-
+    @nav_active = 'update'
     respond_to do |format|
       if @interviewee.update_attributes(params[:interviewee])
         format.html { redirect_to @interviewee, notice: 'Interviewee was successfully updated.' }
@@ -73,7 +74,7 @@ class IntervieweesController < ApplicationController
   # GET /interviewees/1.json
   def delete
     @interviewee = Interviewee.find(params[:id])
-
+    @nav_active = 'delete'
     respond_to do |format|
       format.html # delete.html.erb
       format.json { render json: @interviewee }
