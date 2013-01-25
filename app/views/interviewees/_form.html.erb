@@ -1,4 +1,4 @@
-<%= simple_form_for(@interviewee) do |f| %>
+<%= simple_form_for(@interviewee, :html => { :multipart => true }) do |f| %>
   <%= f.error_notification %>
 
   <table class="table">
@@ -12,6 +12,11 @@
     <tr>
         <td><%= f.input :address %></td>
         <td> <%= f.input :postal_code %></td>
+    </tr>
+    <tr>
+        <td>
+          <%= f.input :pic, label: "Upload your Profile Picture"%>
+        </td>
     </tr>
   </table>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118153006) do
+ActiveRecord::Schema.define(:version => 20130125070903) do
 
   create_table "interviewees", :force => true do |t|
     t.string   "first_name"
@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(:version => 20130118153006) do
     t.string   "nationality"
     t.string   "address"
     t.string   "postal_code"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
   create_table "roles", :force => true do |t|
