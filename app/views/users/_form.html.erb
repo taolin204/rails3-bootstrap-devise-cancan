@@ -1,0 +1,16 @@
+<%= simple_form_for(@user, :html => { :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <table class="table">
+    <tr>
+        <td> <%= f.input :email %></td>
+        <td><%= f.input :name %></td>
+        <td><%= f.input :password %></td>
+        <td><%= f.input :password_confirmation %></td>
+    </tr>
+  </table>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,55 @@
+<div class='page-header'>
+  <h3>Detail Infos for user</h3>
+</div>
+<ul class="breadcrumb">
+  <li class=""><a href="/" class="pjax">Dashboard</a></li>
+  <span class="divider">/</span>
+  <li class="active"><a href="/users" class="pjax">user Management</a></li>
+  <span class="divider">/</span>
+  <% if @nav_active == 'new' %>
+  <li class="active"><a href="/users/sign_up" class="pjax">New</a></li>
+  <% else %>
+  <li class="active"><a href="/users/<%= @user.id %>" class="pjax"><%= @user.name %></a></li>
+  <% end %>
+</ul>
+
+<% if @nav_active != 'new' %>
+<ul class='nav nav-tabs'>
+  <% if @nav_active == 'show' %>
+  <li title="" rel="" class="icon show_member_link active">
+  <% else %>
+  <li title="" rel="" class="icon show_member_link">
+  <% end %>
+    <a class="pjax" href="/users/<%= @user.id %>">
+      <i class="icon-info-sign"></i>
+      <span>Show</span>
+    </a>
+  </li>
+  <% if @nav_active == 'edit' %>
+  <li title="" rel="" class="icon edit_member_link active">
+  <% else %>
+  <li title="" rel="" class="icon edit_member_link "> 
+  <% end %>
+    <a class="pjax" href="/users/<%= @user.id %>/edit">
+      <i class="icon-pencil"></i>
+      <span>Edit</span>
+    </a>
+  </li>
+  <% if @nav_active == 'delete' %>
+  <li title="" rel="" class="icon delete_member_link active">
+  <% else %>
+  <li title="" rel="" class="icon delete_member_link ">
+  <% end %>
+    <a class="pjax" href="/users/<%= @user.id %>/delete">
+      <i class="icon-remove"></i>
+      <span>Delete</span>
+    </a>
+  </li>
+  <li title="" rel="" class="icon history_show_member_link ">
+    <a class="pjax" href="/users/<%= @user.id %>/history">
+      <i class="icon-book"></i>
+      <span>History</span>
+    </a>
+  </li>
+</ul>
+<% end %>

@@ -11,9 +11,9 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
     <ul class="dropdown-menu">
       <% if current_user.has_role? :admin %>
-      <li><a href="#">Agent Admin</a></li>
+      <li><a href="/users">Agent Admin</a></li>
       <% end %>
-      <li><a href="#">Interviewee Admin</a></li>
+      <li><a href="/interviewees">Interviewee Admin</a></li>
       <li><a href="#">Schedule Admin</a></li>
       <li><a href="#">Company Admin</a></li>
     </ul>

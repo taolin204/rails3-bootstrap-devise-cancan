@@ -3,8 +3,10 @@
     <ul class="nav nav-list">
       <li class="nav-header">Today: </li>
       <li class="active"><a href="#">Dashboard</a></li>
-      <li class="nav-header">Agent: </li>
-      <li><a href="#">Create New agent</a></li>
+      <% if current_user.has_role? :admin %>
+      <li class="nav-header">User: </li>
+      <li><a href="/user/new">Create New User</a></li>
+      <% end %>
       <li class="nav-header">Interviewee: </li>
       <li><a href="/interviewees/new">Create New interviewee</a></li>
       <li class="nav-header">Schedule: </li>

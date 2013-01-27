@@ -1,3 +1,31 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <%= render 'layouts/sidebar' %>
+
+    <div class='span9'>
+    <div class='row-fluid'>
+    <div class='content' data-pjax-container>
+
+    <%= render 'form_user_nav' %>
+    
+    <div class='fieldset'>
+      <h4>Basic info</h4>
+      <table class="table">
+        <tr>
+            <td>
+              <label>email</label><span class="input-xlarge uneditable-input"><%= @user.name%></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <label>email</label><span class="input-xlarge uneditable-input"><%= @user.email%></span>
+            </td>
+        </tr>
+      </table>
+    </div>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
